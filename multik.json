@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "demo-repo1": {
+            "repo": "https://github.com/multik/demo-repo1.git",
+            "version": "master"
+        },
+        "demo-repo2": {
+            "repo": "https://github.com/multik/demo-repo2.git",
+            "version": "master"
+        },
+        "demo-repo3": {
+            "repo": "https://github.com/multik/demo-repo2.git",
+            "version": "master"
+        }
+    }
+
+}

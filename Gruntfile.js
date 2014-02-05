@@ -1,7 +1,10 @@
+var path = require('path');
+
 module.exports = function(grunt) {
 
     if (grunt.multik) {
         var dependency = grunt.multik.currentDependency;
+        var dependSrc = path.join(dependency.directory, 'src');
 
         if (dependency.group === 'mygroup') {
 
@@ -16,7 +19,14 @@ module.exports = function(grunt) {
                                 dest: 'build/lib/<%= dependency.name %>'
                             }]
                     }
+                },
+                watch: {
+                    files: [
+                        path.join(dependSrc, '**/*')
+                    ],
+                    tasks: ['copy:src']
                 }
+
             });
 
             // Default task(s).
@@ -45,6 +55,10 @@ module.exports = function(grunt) {
                             dest: 'build'
                         }]
                 }
+            },
+            watch: {
+                files: ['src/**/*'],
+                tasks: ['copy:src']
             }
         });
 
@@ -52,4 +66,5 @@ module.exports = function(grunt) {
     }
 
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 };

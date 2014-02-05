@@ -17,7 +17,7 @@
         "demo-repo3": {
             "group": "mygroup",
             "folder": "repo3",
-            "repo": "https://github.com/multik/demo-repo2.git",
+            "repo": "https://github.com/multik/demo-repo3.git",
             "version": "master"
         }
     }
